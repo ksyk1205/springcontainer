@@ -8,28 +8,32 @@ import config.user.UserConfig01;
 import kr.co.itcen.springcontainer.user.User;
 
 public class JavaConfigTest {
-	
+
 	public static void main(String[] args) {
 		testUser01();
 		testUser02();
 	}
-	
-	//1.Java Config Class를 명시한다.(Explicit Configuration)
+
+	// 1. Java Config Class를 명시한다. (Explicit Configuration)
 	public static void testUser01() {
-		ApplicationContext appCntxt = new AnnotationConfigApplicationContext(UserConfig01.class);
+		ApplicationContext appCntx = 
+				new AnnotationConfigApplicationContext(UserConfig01.class);
 		
-		User user = appCntxt.getBean(User.class);
+		User user = appCntx.getBean(User.class);
 		System.out.println(user);
 		
-		((ConfigurableApplicationContext)appCntxt).close();	
+		((ConfigurableApplicationContext)appCntx).close();
 	}
-	//2.자동으로 Java Config Class를 Scan한다.(auto-scan)
+	
+	//2. 자동으로 Java Config Class를 Scan한다. (auto-scan)
 	public static void testUser02() {
-		ApplicationContext appCntxt = new AnnotationConfigApplicationContext("config.user");
+		ApplicationContext appCntx = 
+				new AnnotationConfigApplicationContext("config.user");
 		
-		User user = appCntxt.getBean(User.class);
+		User user = appCntx.getBean(User.class);
 		System.out.println(user);
 		
-		((ConfigurableApplicationContext)appCntxt).close();	
+		((ConfigurableApplicationContext)appCntx).close();
 	}
+	
 }

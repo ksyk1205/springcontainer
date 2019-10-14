@@ -1,4 +1,4 @@
-package kr.co.itcen.springcontatiner.user;
+package kr.co.itcen.springcontainer.user;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
