@@ -22,7 +22,7 @@ import config.videosystem.DVDPlayerConfig;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {DVDPlayerConfig.class})
-public class VideoSystemJavaConfig {
+public class VideoSystemJavaConfigTest {
 	@Rule
 	public final SystemOutRule systemOutRule = new SystemOutRule().enableLog();
 
