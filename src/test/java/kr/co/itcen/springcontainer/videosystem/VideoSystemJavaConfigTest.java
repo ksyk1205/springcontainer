@@ -13,28 +13,25 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import config.videosystem.DVDPlayerConfig;
 
-
-
 /*
- * Explicit(명시적) Configuration - Java Config
- * @Bean
- * 
+ *  Explicit(명시적) Configuration - Java Config
+ *  @Bean
+ *  
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {DVDPlayerConfig.class})
 public class VideoSystemJavaConfigTest {
 	@Rule
 	public final SystemOutRule systemOutRule = new SystemOutRule().enableLog();
-
+	
 	@Autowired
 	private DVDPlayer player;
-	
-
 	
 	@Test
 	public void testPlayerNull() {
 		assertNotNull(player);
 	}
+
 	@Test
 	public void testPlay() {
 		player.play();
